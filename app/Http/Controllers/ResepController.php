@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Resep;
-use App\Resep as AppResep;
+
 
 class ResepController extends Controller
 {public function index(){
-    return AppResep::all();
+    return Resep::all();
 }
 
 public function create(request $request){
-    $resep = new AppResep();
+    $resep = new Resep();
     $resep->judul = $request->judul;
     $resep->penulis = $request->penulis;
     $resep->deskripsi = $request->deskripsi;
@@ -31,7 +31,7 @@ public function update(request $request, $id){
     $waktuMasak = $request->waktuMasak;
     $penyajian = $request->penyajian;
     $komposisi = $request->komposisi;
-    $resep = AppResep::find($id);
+    $resep = Resep::find($id);
     $resep->judul = $judul;
     $resep->penulis = $penulis;
     $resep->deskripsi = $deskripsi;
@@ -45,7 +45,7 @@ public function update(request $request, $id){
 
 
 public function delete($id){
-    $resep = AppResep::find($id);
+    $resep = Resep::find($id);
     $resep->delete();
     return "Data Telah Terhapus";
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ResepController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,10 +14,4 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-Route::get('resep', 'resepController@index');
-Route::post('resep', 'resepController@create');
-Route::put('/resep/{id}', 'resepController@update');
-Route::delete('/resep/{id}', 'resepController@delete');
+Route::apiResource('resep', ResepController::class);
