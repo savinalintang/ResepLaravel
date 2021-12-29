@@ -14,5 +14,5 @@ class Resep extends Model
      *
      * @var array
      */
-    protected $fillable = ['judul','penulis','deskripsi','waktuMasak','penyajian','komposisi'];
+    protected $fillable = ['judul', 'penulis', 'deskripsi', 'waktuMasak', 'penyajian', 'komposisi'];
 }
